@@ -17,14 +17,14 @@ import matplotlib.gridspec as gridspec
 CONSTIT_FIT_LIST = [
     # '175_01',
     # '175_03',
-    '175_04',
+    # '175_04',
     '175_09',
     '175_10',
     '175_11',
     # '175_12',
     # '175_13',
     '175_15',
-    # '175_16',
+    '175_16',
     # '90_02',
     # '90_03',
     # '90_04',
@@ -32,7 +32,7 @@ CONSTIT_FIT_LIST = [
     # '250_03',
 ]
 
-RUN_LBL = '02'
+RUN_LBL = '03'
 
 # initial parameter guess
 VISC_TAU_BAR = 3.  # visco-plastic paramter [1/sec]

@@ -17,13 +17,13 @@ import numpy as np
 CONSTIT_FIT_LIST = [
     # '175_01',
     # '175_03',
-    # '175_04',
-    # '175_09',
-    # '175_10',
-    # '175_11',
+    '175_04',
+    '175_09',
+    '175_10',
+    '175_11',
     # '175_12',
     # '175_13',
-    # '175_15',
+    '175_15',
     '175_16',
     # '90_02',
     # '90_03',
@@ -33,7 +33,7 @@ CONSTIT_FIT_LIST = [
 ]
 
 # run_lbl = '175_10-16el/03'
-run_lbl = '02'
+run_lbl = '03'
 
 # define paths
 current_dir = os.getcwd()
@@ -48,7 +48,7 @@ fit_parm = np.loadtxt(load_parm_path)
 input_data = np.loadtxt(load_input_path)
 
 PLOT_RESULTS = True
-FIG_HEIGHT = 6
+FIG_HEIGHT = 12
 FIG_WIDTH = 12
 
 VISC_TAU_BAR = fit_parm[0]  # visco-plastic paramter [1/sec]

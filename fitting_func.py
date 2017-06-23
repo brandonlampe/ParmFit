@@ -104,8 +104,11 @@ def load_parm_data(data_list, porosity_adj=False):
         vstrn_rate = all_data[:, idx_vstrn_rate]
 
         if porosity_adj:
+            # print "porosity load: " + str(porosity)
             porosity = porosity + adj_dict[i]  # apply porosity adjustment
-
+            # print "porosity adj i: " + i
+            # print "adj value: " + str(adj_dict[i])
+            # print "porosity load adj: " + str(porosity)
         meas_dict[i] = {'time_sec': time_sec,
                         'pc_mpa': pc_mpa,
                         'pp_mpa': pp_mpa,
@@ -265,7 +268,7 @@ def eval_parm(parm_list, porosity_adj,
               plot, fig_height, fig_width):
 
     """ calculate residual"""
-
+    print "porosity adj: " + str(porosity_adj)
     # must be integers
     visc_rule = int(visc_rule)
     hard_model = int(hard_model)
@@ -294,6 +297,8 @@ def eval_parm(parm_list, porosity_adj,
                                       load_traction_parm_name)
 
     meas_dict = load_parm_data(constit_fit_list, porosity_adj)  # lab values
+    print "meas porosity:"
+    print meas_dict['175_16']['porosity']
     traction_dict = np.load(load_traction_path).item()  # fitted BCTs
 
     # plotting parameters
@@ -448,6 +453,7 @@ def eval_parm(parm_list, porosity_adj,
 
     AX1.set_xlabel(r'Test Duration [sec]')
     AX2.set_xlabel(r'Test Duration [sec]')
+    plt.tight_layout()
     if plot:
         plt.savefig('Eval_Summary.pdf')
         plt.show()
